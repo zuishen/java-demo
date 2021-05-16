@@ -48,6 +48,7 @@ public class ZipTest {
             }
         } else {
             zos.putNextEntry(new ZipEntry(subFile + "/"));
+            zos.closeEntry();
         }
 
     }
