@@ -4,16 +4,18 @@ import java.sql.*;
 
 /**
  * JDBC操作
- * <p>
- * 1.注册驱动
- * 2.获取数据库连接对象 Connection
- * 3.定义sql，接受返回结果 statement
- * 4.获取执行sql语句的对象 resultSet
- * 5.
+ *
+ * 1.注册驱动: 告诉程序该使用哪一个数据库驱动jar
+ * 2.获取数据库连接对象 Connection: DriverManager.getConnection
+ *      mysql 6.0以下: com.mysql.jdbc.Driver, jdbc:mysql://localhost:3306/test
+ *      mysql 6.0及以上: com.mysql.cj.jdbc.Driver, jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
+ * 3.定义sql
+ * 4.获取执行sql的对象 statement
+ * 5.执行SQL
+ * 6.处理返回结果
+ * 7.释放资源
  */
 public class JdbcDemo {
-    // mysql 6.0以下: com.mysql.jdbc.Driver, jdbc:mysql://localhost:3306/test
-    // mysql 6.0及以上: com.mysql.cj.jdbc.Driver, jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC
     private static final String DRIVER_CLASS = "com.mysql.cj.jdbc.Driver";
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC";
